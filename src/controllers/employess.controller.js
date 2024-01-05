@@ -1,5 +1,6 @@
 import { pool } from "../db.js"
 
+
 export const getEmployees =async(req,res)=>{
   try {
     const [rows]=await pool.query("SELECT * FROM empleo")
@@ -11,6 +12,7 @@ export const getEmployees =async(req,res)=>{
 }
 
 export const getEmployee =async(req,res)=>{
+
  try {
   const [rows] = await pool.query("SELECT * FROM empleo WHERE id = ?",[req.params.id])
  if (rows.length <=0) {
